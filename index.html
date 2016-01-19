@@ -21,28 +21,30 @@ for(i=1; i<101; i++){
 }
 // function to shuffle the created array
 function shuffleArray(arrayTest){
-	for(j=arrayTest.length-1;i>0; i--){
+	for(i=arrayTest.length-1;i>0; i--){
 		var k=Math.floor(Math.random()*(i+1));
-		var temp=arrayTest[j];
-		arrayTest[j]=arrayTest[k];
+		var temp=arrayTest[i];
+		arrayTest[i]=arrayTest[k];
 		arrayTest[k]=temp;
 	}
 	return arrayTest;
+
 }
 // Call the function and shuffle the array
 shuffleArray(arrayTest);
+console.log(arrayTest);
 // Create a random number between 1 and 99 to grab an element out of the array.
 x= Math.floor((Math.random()*99)+1);
-console.log(x);
+console.log("The index that is spliced out is: "+x)
 // Cut the random element out of the array
 numberRemoved = arrayTest.splice(x,1);
-
+console.log("The number that is pulled out of the array is:"+numberRemoved);
 // Look for and print out the missing number
 var missingNumber=0;
-for(l=1;l<101;l++){
-	missingNumber = arrayTest.indexOf(l);
+for(i=1;i<101;i++){
+	missingNumber = arrayTest.indexOf(i);
 	if(missingNumber == -1){
-		console.log("The missing number is: "+l);
+		console.log("The missing number is: "+i);
 	}
 }
 
